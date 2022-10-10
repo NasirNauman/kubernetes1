@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-apache2
+  name: nginx
 spec:
   selector:
     matchLabels:
-      app: my-apache2
+      app: nginx:latest
   template:
     metadata:
       labels:
-        app: my-apache2
+        app: nginx:latest
     spec:
       containers:
-      - name: my-apache2
-        image: <Image>
+      - name: nginx
+        image: nginx:latest
         resources:
           limits:
             memory: "128Mi"
