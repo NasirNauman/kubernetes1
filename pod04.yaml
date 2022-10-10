@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-apache2
+spec:
+  selector:
+    matchLabels:
+      app: my-apache2
+  template:
+    metadata:
+      labels:
+        app: my-apache2
+    spec:
+      containers:
+      - name: my-apache2
+        image: <Image>
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
